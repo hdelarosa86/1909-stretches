@@ -8,14 +8,16 @@ zip([
 */
 
 function zip(objs) {
-  let obj ={};
-  objs.forEach( item => {
-    if(obj[Object.keys(item)]){
-      obj[Object.keys(item)] += Object.keys(item);
-    } 
-  })
-
-  return obj
+  return objs.reduce( (obj,currVal) => {
+    for(let k in currVal){
+      if(obj[k]){
+        obj[k] += currVal[k];
+      } else {
+        obj[k] = currVal[k];
+      }
+    }
+    return obj;
+  }, {});
 }
-
+console.log(zip([{x: 1}, {x: 2}]));
 module.exports = { zip };
