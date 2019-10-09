@@ -44,15 +44,15 @@ const items = [
 //       price: 4,
 //   }]
 
-function query(arr, obj) {
-  let queryArr = Object.values(obj);
-  arr.filter( currVal => {
-      
-
-  }
-
-  )
- 
+function query(arr, objToFilter) {
+  let objToFilterArr = Object.entries(objToFilter);
+  return arr.filter( obj => {
+    return objToFilterArr.every( (ele) =>{
+      const [key,value] = ele;
+      console.log(key,value);
+      return obj[key] === value;
+    })
+  })
 }
-
+query(items, { price: 4, name: 'bazz'});
 module.exports = { query, items };
