@@ -1,10 +1,10 @@
 function times(n) {
   if (typeof n !== 'number') {
-    return 'Numbers only!';
+    throw 'Numbers only!';
   }
   return function(a) {
     if (typeof a !== 'number') {
-      return 'Numbers only!';
+      throw 'Numbers only!';
     }
     return a * n;
   };
