@@ -9,7 +9,6 @@ function times(n) {
     return a * n;
   };
 }
-
 //cant remember how to throw an exception;
 
 module.exports = { times };
