@@ -13,6 +13,6 @@ class DiceRoller {
   roll(){
     //return  
   }
-}
+}https://acme-users-api-rev.herokuapp.com/api/products
 
 module.exports = { DiceRoller };
