@@ -7,18 +7,15 @@
 //  456
 
 const floydsTriangle = n => {
-  let str = '';
-  if (n !== '') {
-    let total = 0;
+    let result = [];
     for (let rows = 0; rows <= n; rows++) {
-      for (let number = 1; number < rows; number++) {
+      for (let number = 0; number <= rows; number++) {
         total = total + number;
       }
-      str += total.toString();
     }
   }
 
-  return str;
+  return result;
 };
 
 module.exports = { floydsTriangle };
