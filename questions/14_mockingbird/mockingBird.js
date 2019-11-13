@@ -5,7 +5,6 @@ const repeater = (func, n) => {
     arr.push(func());
   }
 }
-console.log(arr.length);
   return arr;
   // repeater runs a function n times and returns an array of its outputs
 };

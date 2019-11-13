@@ -11,16 +11,18 @@ describe('multiply testing', () => {
 
   test('it returns the product of two numbers', () => {
     // test the type of the returned value
-    expect(5,4).toBe();
+    expect(typeof multiply(5,4)).toBe('number');
 
     // test that the returned value is correct
-    expect(4,9).toBe(36);
+    expect(multiply(4,9)).toBe(36);
 
     // test some other values
-    expect(6,3).toBe(18);
+    expect(multiply(3,4)).toBe(12);
   });
 
   test('it is not hardcoded (hint: use random numbers)', () => {
-
+    const num1 =Math.floor(Math.random() * 100);
+    const num2 =Math.floor(Math.random() * 100);
+    expect(multiply(num1,num2)).toBe(num1*num2);
   });
 });
