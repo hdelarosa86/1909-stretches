@@ -1,13 +1,23 @@
 function groupBy(arr, attr) {
-    return arr.reduce( (obj,item) => {
-        if(obj[item[attr]]){
-            obj[item[attr]].concat([item]);
-        } else {
-            obj[item[attr]] = [item];
-        }
-        console.log(obj);
-       return obj
-    },{})
+  let obj = {};
+  if (typeof attr === 'function') {
+    arr.forEach(item => {
+      if (!obj[attr(item)]) {
+        obj[attr(item)] = [item];
+      } else {
+        obj[attr(item)].push(item);
+      }
+    });
+  } else {
+    arr.forEach(item => {
+      if (!obj[item[attr]]) {
+        obj[item[attr]] = [item];
+      } else {
+        obj[item[attr]].push(item);
+      }
+    });
+  }
+  return obj;
 }
 
 module.exports = { groupBy };

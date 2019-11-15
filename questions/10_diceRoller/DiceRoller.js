@@ -3,16 +3,29 @@
 // history property which outputs all of the previous rolls
 
 class DiceRoller {
-  constructor(sides,numDice){
-    if(typeof sides !== 'number' || typeof numDice !== 'number'){
+  constructor(sides, numDice) {
+    if (
+      typeof sides !== 'number' ||
+      typeof numDice !== 'number' ||
+      sides < 1 ||
+      sides > 6
+    ) {
       throw Error;
-    }else{
-    this.sides = sides;
-    this.numDice = numDice;}
+    } else {
+      this.sides = sides;
+      this.numDice = numDice;
+      this.history = [];
+    }
   }
-  roll(){
-    //return  
+  roll() {
+    let values = [];
+    for (let i = 0; i < this.numDice; i++) {
+      values.push(Math.floor(Math.random() * this.sides) + 1); 
+    }
+ 
+    this.history.push(values);
+    return values; //[Math.floor(Math.random()*values.length)])
   }
-}https://acme-users-api-rev.herokuapp.com/api/products
+}
 
 module.exports = { DiceRoller };
