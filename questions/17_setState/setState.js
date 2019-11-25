@@ -7,10 +7,13 @@ class StatefulThing {
     this.state = initialState;
   }
   setState(obj) {
-    // YOUR CODE
-    const newState = Object.assign({}, {...this.state}, {...obj});
+    //const oldState = Object.assign({}, {...this.state});
+    const newState = Object.assign({}, this.state, obj );
     this.state = newState;
     return this.state;
+  }
+  goBack(){
+
   }
 }
 
