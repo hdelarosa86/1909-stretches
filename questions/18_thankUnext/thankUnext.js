@@ -16,10 +16,20 @@
 
 // YOUR CODE (intentionally blank):
 Array.prototype.next = function(){
+    if(!this.nextIdx){
+        this.nextIdx = 0;
+    }
 
     for(let i = 0; i < this.length; i++){
+        if(i === this.length - 1){
+            
         console.log(this[i])
     }
+    
+    // this.forEach(a => {
+    //     if(Array.indexOf(a) === this.length -1){
+    //     }
+    //     console.log(a);
     return this;
 }
 // no export statement required
